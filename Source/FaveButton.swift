@@ -29,7 +29,6 @@ public typealias DotColors = (first: UIColor, second: UIColor)
 
 public protocol FaveButtonDelegate {
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool)
-    
     func faveButtonDotColors(_ faveButton: FaveButton) -> [DotColors]?
 }
 
@@ -48,7 +47,6 @@ open class FaveButton: UIButton {
         static let faveIconShowDelay    = Const.expandDuration + Const.collapseDuration / 2.0
         static let dotRadiusFactors     = (first: 0.0633, second: 0.04)
     }
-    
     
     open var dotFirstColor: UIColor   = UIColor(red: 152/255, green: 219/255, blue: 236/255, alpha: 1)
     open var dotSecondColor: UIColor  = UIColor(red: 247/255, green: 188/255, blue: 48/255,  alpha: 1)
@@ -72,7 +70,7 @@ open class FaveButton: UIButton {
         }
     }
     
-    init(frame: CGRect, faveIconNormal: UIImage?, faveIconSelected: UIImage?) {
+    public init(frame: CGRect, faveIconNormal: UIImage?, faveIconSelected: UIImage?) {
         guard let icon = faveIconNormal else {
             fatalError("missing image for normal state")
         }
